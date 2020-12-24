@@ -24,13 +24,14 @@ jobs:
           tar cf ./gde-online.tar .
           
       - name: Transfer project archive to remote server via ssh
-        uses: appleboy/ssh-action@master
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: 22
-          script: ls
+          source: "./gde-online.tar"
+          target: "/var/www/vh420607/data/www/gde-online.ru"
 
       # Runs a set of commands using the runners shell
 #       - name: Run a multi-line script
