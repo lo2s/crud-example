@@ -14,4 +14,4 @@
     
 If you need testing data: `run-backend-seed`
 
-Application available at: http://localhost:8000
+Application available at: http://localhost:8002
